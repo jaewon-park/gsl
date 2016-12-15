@@ -15,7 +15,9 @@ RUN wget -q $GSL_DL \
     && tar zxvf $GSL_TAR \
     && rm -f $GSL_TAR
 
-RUN ./build.sh
+ADD build.sh /usr/local/sbin/build.sh
+
+RUN build.sh
 
 ADD setup.sh /setup.sh
 ENTRYPOINT ["/setup.sh"]

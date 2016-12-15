@@ -11,9 +11,12 @@ ENV GSL_DL="http://ftp.wayne.edu/gnu/gsl/$GSL_TAR"
 ENV GSL_ROOT="/gnu/gsl/"
 ENV LD_LIBRARY_PATH="$GSL_ROOT/lib:$LD_LIBRARY_PATH"
 
-RUN wget $GSL_DL \
-    && tar zxf $GSL_TAR \
+RUN wget -q $GSL_DL \
+    && tar zxvf $GSL_TAR \
     && rm -f $GSL_TAR
+
+ADD build.sh /build.sh
+ENTRYPOINT ["/build.sh"]
 
 
     

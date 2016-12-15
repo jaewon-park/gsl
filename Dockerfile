@@ -15,8 +15,12 @@ RUN wget -q $GSL_DL \
     && tar zxvf $GSL_TAR \
     && rm -f $GSL_TAR
 
-ADD build.sh /build.sh
-ENTRYPOINT ["/build.sh"]
+RUN ./configure --prefix=/gnu/gsl \
+    && make -j 4 \
+    && make install
+
+ADD setup.sh /setup.sh
+ENTRYPOINT ["/setup.sh"]
 
 
     

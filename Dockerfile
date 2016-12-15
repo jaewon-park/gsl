@@ -1,4 +1,4 @@
-FROM CentOS Linux 7
+FROM ubuntu:14.04
 MAINTAINER jaewon.park@vt.edu
 
 ENV GSL_TAR="gsl-2.3.tar.gz"

@@ -15,7 +15,7 @@ RUN wget -q $GSL_DL \
     && tar zxvf $GSL_TAR \
     && rm -f $GSL_TAR \
     && cd gsl-2.3 \
-    && ./configure --prefix=/gnu/gsl \
+    && ./configure --prefix=/usr \
     && make -j 4 \
     && make install
 

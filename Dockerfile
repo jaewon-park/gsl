@@ -19,8 +19,8 @@ RUN wget -q $GSL_DL \
     && make -j 4 \
     && make install
 
-ADD setup.sh /setup.sh
-ENTRYPOINT ["/setup.sh"]
+ADD run-gsl.sh /run-gsll.sh
+ENTRYPOINT ["/run-gsl.sh"]
 
 
     

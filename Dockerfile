@@ -11,6 +11,8 @@ ENV GSL_DL="http://ftp.wayne.edu/gnu/gsl/$GSL_TAR"
 ENV GSL_ROOT="/gnu/gsl/"
 ENV LD_LIBRARY_PATH="$GSL_ROOT/lib:$LD_LIBRARY_PATH"
 
+ENV GSL_INC="/gnu/gsl/include"
+
 RUN mkdir /gnu \
     && wget -q $GSL_DL \
     && tar zxvf $GSL_TAR \

@@ -13,11 +13,11 @@ ENV LD_LIBRARY_PATH="$GSL_ROOT/lib:$LD_LIBRARY_PATH"
 
 RUN wget -q $GSL_DL \
     && tar zxvf $GSL_TAR \
-    && rm -f $GSL_TAR
-
-ADD build.sh /usr/local/sbin/build.sh
-
-RUN build.sh
+    && rm -f $GSL_TAR \
+    && cd gsl-2.3 \
+    && ./configure --prefix=/gnu/gsl \
+    && make -j 4 \
+    && make install
 
 ADD setup.sh /setup.sh
 ENTRYPOINT ["/setup.sh"]

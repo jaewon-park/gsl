@@ -16,7 +16,7 @@ RUN mkdir /gnu \
     && tar zxvf $GSL_TAR \
     && rm -f $GSL_TAR \
     && cd gsl-2.3 \
-    && ./configure --prefix=/usr \
+    && ./configure --prefix=/gnu/gsl \
     && make -j 4 \
     && make install
 

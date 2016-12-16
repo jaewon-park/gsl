@@ -59,7 +59,7 @@ elif [ -e "$RUN" ]; then
 
 elif [ -e "$CFILE" ]; then 
 
-    echo "performing: g++ -o $BINARY $CFILE -I /gnu/gsl"
+    echo "performing: g++ -o $BINARY $CFILE -I /gnu/gsl/include"
     g++ -o "$BINARY" "$CFILE" -I /gnu/gsl && echo "done" || echo "error"
 
 elif [ "$CFILE" == "bash" ]; then
